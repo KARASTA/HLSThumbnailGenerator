@@ -113,7 +113,7 @@ public final class ThumbnailGenerator {
     }
 
     private func generateThumbnail(atTimeInSeconds time: Double) {
-        let time = CMTime(seconds: time, preferredTimescale: 1)
+        let time = CMTime(seconds: time, preferredTimescale: 600)
         player.seek(to: time, toleranceBefore: .zero, toleranceAfter: .zero) { [weak self] isFinished in
             guard let self = self else { return }
             guard isFinished else {
